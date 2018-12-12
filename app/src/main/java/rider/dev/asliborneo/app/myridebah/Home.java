@@ -1,9 +1,6 @@
 package rider.dev.asliborneo.app.myridebah;
 
 
-
-
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -11,7 +8,6 @@ import android.content.res.Resources;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -75,7 +71,7 @@ import rider.dev.asliborneo.app.myridebah.Model.fcm_response;
 import rider.dev.asliborneo.app.myridebah.Remote.FCMService;
 import rider.dev.asliborneo.app.myridebah.Remote.RetrofitClient;
 
-public class Home extends AppCompatActivity
+public abstract class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener,
         LocationListener, GoogleMap.OnMyLocationButtonClickListener,
@@ -612,13 +608,6 @@ public class Home extends AppCompatActivity
 
 
     @Override
-    public void onConnected(@Nullable Bundle bundle) {
-        displayLocation();
-        startLocationUpdates();
-    }
-
-
-    @Override
     public void onConnectionSuspended(int i) {
         mGoogleApiClient.connect();
     }
@@ -701,4 +690,6 @@ public class Home extends AppCompatActivity
         bottom_sheet_rider_fragment bsrf=bottom_sheet_rider_fragment.newinstance(String.format("%f,%f",Commons.mLastLocation.getLatitude(),Commons.mLastLocation.getLongitude()),String.format("%f,%f",latLng.latitude,latLng.longitude),true);
         bsrf.show(getSupportFragmentManager(),bsrf.getTag());
     }
+
+
 }
