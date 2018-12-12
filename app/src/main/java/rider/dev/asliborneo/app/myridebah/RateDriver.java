@@ -12,7 +12,6 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,8 +25,6 @@ import java.util.Map;
 
 import dmax.dialog.SpotsDialog;
 import me.zhanghai.android.materialratingbar.MaterialRatingBar;
-import rider.dev.asliborneo.app.myridebah.Commons.Commons;
-import rider.dev.asliborneo.app.myridebah.Model.Rate;
 
 public class RateDriver extends AppCompatActivity {
     Button btn_submit;
@@ -44,9 +41,9 @@ public class RateDriver extends AppCompatActivity {
         database=FirebaseDatabase.getInstance();
         rating_detail_ref=database.getReference("Driver_Rating");
         Driverinformationref=database.getReference("DriverInformation");
-        btn_submit=(Button) findViewById(R.id.btn_submit);
-        comment=(MaterialEditText) findViewById(R.id.comment);
-        ratingBar=(MaterialRatingBar) findViewById(R.id.ratingbar);
+        btn_submit= findViewById(R.id.btn_submit);
+        comment= findViewById(R.id.comment);
+        ratingBar= findViewById(R.id.ratingbar);
 
 
 
@@ -59,12 +56,12 @@ public class RateDriver extends AppCompatActivity {
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Submit_Rating_Detail(driverId);
+               // Submit_Rating_Detail(driverId);
             }
         });
     }
 
-    private void Submit_Rating_Detail(String key) {
+ /*   private void Submit_Rating_Detail(String key) {
         final AlertDialog waiting_dialog=new SpotsDialog(RateDriver.this);
         waiting_dialog.show();
         Rate rate=new Rate();
@@ -121,5 +118,5 @@ public class RateDriver extends AppCompatActivity {
 
             }
         });
-    }
+    }*/
 }

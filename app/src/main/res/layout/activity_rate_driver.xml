@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:padding="10dp"
         android:text="THANKS FOR RIDING WITH US"
         />
@@ -23,7 +23,7 @@
         android:rating="0"
         style="@style/Widget.MaterialRatingBar.RatingBar"
         app:mrb_progressTint="@color/cardview_dark_background"
-        app:mrb_secondaryProgressTint="@color/cardview_dark_background"
+        app:mrb_secondaryProgressTint="@android:color/holo_orange_light"
         />
     <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_width="match_parent"
@@ -46,7 +46,7 @@
         android:id="@+id/btn_submit"
         android:text="Submit"
         android:textStyle="bold"
-        android:background="@android:color/black"
+        android:background="@android:color/holo_green_light"
         android:textColor="@android:color/white"
         />
 </LinearLayout>

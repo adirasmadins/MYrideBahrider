@@ -30,7 +30,8 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 
 import dmax.dialog.SpotsDialog;
 import io.paperdb.Paper;
-import rider.dev.asliborneo.app.myridebah.Helper.bottom_sheet_rider_fragment;
+
+import rider.dev.asliborneo.app.myridebah.Helper.MapActivity;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import rider.dev.asliborneo.app.myridebah.Commons.Commons;
@@ -60,16 +61,16 @@ public class MainActivity extends AppCompatActivity {
         auth= FirebaseAuth.getInstance();
         db= FirebaseDatabase.getInstance();
         Rider=db.getReference(Commons.Registered_Riders);
-        btnSignin=(Button)findViewById(R.id.btnSignin);
-        btnRegister=(Button)findViewById(R.id.btnRegister);
-        txt_forgot_password=(TextView) findViewById(R.id.txt_forgot_password);
+        btnSignin= findViewById(R.id.btnSignin);
+        btnRegister= findViewById(R.id.btnRegister);
+        txt_forgot_password= findViewById(R.id.txt_forgot_password);
         txt_forgot_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 show_forgot_password_dialog();
             }
         });
-        rootlayout=(RelativeLayout) findViewById(R.id.rootlayout);
+        rootlayout= findViewById(R.id.rootlayout);
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -119,10 +120,10 @@ public class MainActivity extends AppCompatActivity {
         register_dialog.setTitle("Register");
         register_dialog.setMessage("Use Email to Register");
         final View v= LayoutInflater.from(MainActivity.this).inflate(R.layout.layout_register,null);
-        email=(MaterialEditText) v.findViewById(R.id.emailtxt);
-        password=(MaterialEditText) v.findViewById(R.id.passwordtxt);
-        name=(MaterialEditText) v.findViewById(R.id.nametxt);
-        phone=(MaterialEditText) v.findViewById(R.id.phone);
+        email= v.findViewById(R.id.emailtxt);
+        password= v.findViewById(R.id.passwordtxt);
+        name= v.findViewById(R.id.nametxt);
+        phone= v.findViewById(R.id.phone);
         register_dialog.setView(v);
         register_dialog.setPositiveButton("Register", new DialogInterface.OnClickListener() {
             @Override
@@ -178,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
         LayoutInflater inflater=LayoutInflater.from(MainActivity.this);
         View v=inflater.inflate(R.layout.forgot_password_layout,null);
         forgot_password_dialog.setView(v);
-        final MaterialEditText emailtxt=(MaterialEditText) v.findViewById(R.id.emailtxt);
+        final MaterialEditText emailtxt= v.findViewById(R.id.emailtxt);
         forgot_password_dialog .setPositiveButton("Reset", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(final DialogInterface dialogInterface, int i) {
@@ -218,8 +219,8 @@ public class MainActivity extends AppCompatActivity {
         login_dialog.setTitle("Sign In");
         login_dialog.setMessage("Use Email to Sign In");
         View v=LayoutInflater.from(MainActivity.this).inflate(R.layout.layout_login,null);
-        email=(MaterialEditText) v.findViewById(R.id.emailtxt);
-        password=(MaterialEditText) v.findViewById(R.id.passwordtxt);
+        email= v.findViewById(R.id.emailtxt);
+        password= v.findViewById(R.id.passwordtxt);
         login_dialog.setPositiveButton("Sign In", new DialogInterface.OnClickListener() {
 
             @Override

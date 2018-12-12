@@ -8,11 +8,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL " />
 
-
-
     <application
         android:allowBackup="true"
-        android:icon="@drawable/map"
+        android:icon="@drawable/img_login"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -23,16 +21,15 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <activity android:name="rider.dev.asliborneo.app.myridebah.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name="rider.dev.asliborneo.app.myridebah.SplashActivity"
+            android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,27 +37,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name="rider.dev.asliborneo.app.myridebah.Services.MyFirebaseIdService">
+
+        <service android:name=".Services.MyFirebaseIdService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-        <service android:name="rider.dev.asliborneo.app.myridebah.Services.MyFirebaseMessaging">
+        <service android:name=".Services.MyFirebaseMessaging">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name="rider.dev.asliborneo.app.myridebah.Home"
+            android:name=".Home"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="rider.dev.asliborneo.app.myridebah.RateDriver"
-            android:label="@string/title_activity_rate_driver"></activity>
+            android:name=".RateDriver"
+            android:label="@string/title_activity_rate_driver" />
+        <activity
+            android:name=".Helper.MapActivity"
+            android:label="@string/title_activity_map"></activity>
     </application>
 
 </manifest>

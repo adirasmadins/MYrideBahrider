@@ -1,6 +1,5 @@
 package rider.dev.asliborneo.app.myridebah.Model;
 
-
 public class Rate {
     private  String rates,comments;
 
@@ -24,7 +23,7 @@ public class Rate {
     }
 
     public Rate(String rates, String comments) {
-       this.rates = rates;
+        this.rates = rates;
         this.comments = comments;
     }
 }

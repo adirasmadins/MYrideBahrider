@@ -35,11 +35,13 @@
             android:layout_height="wrap_content"
 
             tools:showIn="@layout/app_bar_home">
+
             <include layout="@layout/content_home" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="60dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="60dp"
                 android:orientation="vertical"
                 >
@@ -50,16 +52,21 @@
                     android:layout_height="wrap_content"
 
                     android:orientation="horizontal">
+
                     <ImageView
+
                         android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_map_black_24dp"/>
-                    <fragment
+                        android:src="@drawable/location"
+
+                        />
+                 <fragment
                         android:id="@+id/place_location"
                         android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
                         android:layout_width="0dp"
+                        android:hint="Enter Location"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
                         />
@@ -68,10 +75,10 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="2dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    android:background="@android:color/holo_orange_light"/>
+                    android:background="@android:color/white"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -80,16 +87,19 @@
                     android:orientation="horizontal">
                     <ImageView
                         android:layout_width="0dp"
+
                         android:layout_gravity="center_vertical"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_pin_drop_black_24dp"/>
+
+                        android:src="@drawable/icon1"/>
                     <fragment
                         android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
                         android:layout_width="0dp"
+                        android:hint="Enter destination"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
-                        android:id="@+id/place_destination"/>
+                        android:id="@+id/place_destination" />
 
                 </LinearLayout>
 
